@@ -1,0 +1,395 @@
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   1. GLOBAL RESET & TYPOGRAPHY
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Nền xám nhạt hiện đại */
+    color: #333;
+}
+
+/* Ghi đè nền riêng cho trang Đăng ký (dk.html) */
+body.register-page {
+    background: url('https://images.unsplash.com/photo-1541252260730-0412e3e2108e?q=80&w=2000') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ==========================================================
+   2. HEADER & SLOGAN TỔNG THỂ
+   ========================================================== */
+header {
+    background-color: #fff;
+    margin-bottom: 60px;
+}
+
+.banner {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Hiệu ứng chuyển màu cực cháy */
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.banner h1 {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.slogan {
+    max-width: 1200px;
+    margin: -40px auto 30px; /* Kéo slogan nổi lên trên banner */
+    padding: 0 20px;
+    position: relative;
+}
+
+.slogan .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.block_3 {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid #fdbb2d;
+}
+
+.block_3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.block_3 h2 {
+    color: #1a2a6c;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.block_3 p {
+    color: #666;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   3. STYLE CHO BỐ CỤC DẠNG BẢNG (TABLE) 
+   ========================================================== */
+table {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    border-collapse: separate;
+    border-spacing: 30px; /* Tạo khoảng cách như grid layout */
+    width: 100%;
+}
+
+.cell_text {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    vertical-align: top;
+    width: 50%;
+}
+
+.cell_img {
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.img, .jpg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.img:hover, .jpg:hover {
+    transform: scale(1.03);
+}
+
+/* Heading trong bảng */
+h3, h2[id] {
+    color: #1a2a6c;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #fdbb2d;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* List (Danh sách thành tích) */
+td ul {
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+td ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+td ul li::before {
+    content: "🏆"; /* Icon cúp thể hiện thành tích */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9em;
+}
+
+/* Link "Chi tiết" trong bảng */
+td a[href*="jpg"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #1a2a6c;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+td a[href*="jpg"]:hover {
+    background-color: #fdbb2d;
+    color: #1a2a6c;
+    transform: translateX(5px);
+}
+
+/* Ghi đè Sidebar Menu trang Nghệ thuật & Thể thao */
+td[style*="gainsboro"] {
+    background-color: #1a2a6c !important; /* Đổi nền xám thành xanh Navy */
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    vertical-align: top;
+}
+
+td[style*="gainsboro"] ul li {
+    padding-left: 0;
+}
+
+td[style*="gainsboro"] ul li::before {
+    content: ""; /* Bỏ icon cúp ở menu */
+}
+
+.menu {
+    display: block;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+    font-weight: bold;
+}
+
+.menu:hover {
+    background: white;
+    color: #1a2a6c;
+    border-left: 4px solid #fdbb2d;
+    transform: translateX(5px);
+}
+
+/* ==========================================================
+   4. FOOTER (CHÂN TRANG)
+   ========================================================== */
+footer {
+    background-color: #111;
+    color: #ddd;
+    padding: 60px 20px;
+    border-top: 5px solid #fdbb2d;
+}
+
+footer .row {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 15px;
+}
+
+.link {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #fdbb2d;
+}
+
+/* Nút đăng ký ở Footer */
+.btn-register {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #fdbb2d;
+    color: #111 !important;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(253, 187, 45, 0.3);
+}
+
+.btn-register:hover {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================
+   5. TRANG ĐĂNG KÝ FORM KÍNH MỜ (DK.HTML)
+   ========================================================== */
+.register-overlay {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.65); /* Làm tối ảnh nền */
+    padding: 20px;
+}
+
+.register-form {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 50px 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.register-form h1 {
+    color: #fdbb2d;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: none; /* Bỏ viền bóng của banner */
+}
+
+.register-form p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fdbb2d;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.register-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.register-form input:focus {
+    border-color: #fdbb2d;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(253, 187, 45, 0.3);
+}
+
+.register-form button {
+    width: 100%;
+    padding: 16px;
+    background: #fdbb2d;
+    border: none;
+    border-radius: 8px;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.register-form button:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(253, 187, 45, 0.4);
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #fdbb2d;
+}
